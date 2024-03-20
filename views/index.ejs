@@ -34,27 +34,16 @@
     try {
       const response = await axios.get("https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/public-barbecues/records?limit=20");
       const locations = response.data.results;
-      const promises = locations.map(async location => {
+      locations.forEach(location => {
         const { lon, lat } = location.co_ordinates;
-        const address = await getAddress(lon, lat);
         const marker = L.marker([lat, lon], { icon: bbqIcon }).addTo(map);
-        marker.bindPopup(address);
+        marker.bindPopup(`Latitude: ${lat}, Longitude: ${lon}`);
       });
-      await Promise.all(promises)
     } catch (error) {
       res.render('index.ejs', { error: error.message });
     }
   }
 
-  async function getAddress (lon, lat) {
-    try {
-      const response = await axios.get(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`);
-      return response.data.display_name;
-    } catch (error) {
-      res.render('index.ejs', { error: error.message });
-    }
-  }
-  
   fetchBBQLocations();
       
  </script>
