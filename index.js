@@ -1,11 +1,11 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
-import { reverseGeocode } from "./geocoding.js";
+import { reverseGeocode } from "./utilities/geocoding.js";
 
 const app = express();
 const port = 3000;
-const API_URL = "https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/public-barbecues/records?limit=10"
+const API_URL = "https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/public-barbecues/records?limit=63"
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
