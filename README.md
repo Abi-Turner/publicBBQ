@@ -10,7 +10,7 @@ Melbourne BBQ Explorer is a web application designed to help users explore the l
 **How to Use:**
 
 
-Website Link: <https://funny-boa-costume.cyclic.app/>
+Website Link: <https://melbourne-bbq-explorer.cyclic.app/>
 
 1. **Exploring BBQ Locations:**
    - Upon accessing the website, users will be presented with an interactive map displaying the locations of public barbecues across Melbourne.
