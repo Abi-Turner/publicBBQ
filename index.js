@@ -31,6 +31,6 @@ app.get("/", async (req, res) => {
 });
 
 
-app.listen(provess.env.PORT || port, (req, res) => {
+app.listen(process.env.PORT || port, (req, res) => {
   console.log(`Server is running on port ${port}`);
 });
